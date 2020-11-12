@@ -170,6 +170,14 @@ body{
         margin-block-end: 600px;
         background-color: silver;
     } 
+
+    /* error - output */
+    error-output{
+        margin-left: 10px;
+        font-size: 12px;
+        font-style: italic;
+        color: red;
+    }
     
     /* Media Queries */
     @media only screen and (max-width: 960px){
