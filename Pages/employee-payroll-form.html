@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"> 
      <link rel="stylesheet" type="text/css" href="../CSS/employee-payroll.css">
+     <script defer src="../JS/Employee_Form.js"></script>
+    <script defer src="../JS/EmployeePayroll.js"></script>
     <title>Employee payroll form</title>
     <style type="text/css"></style>
 </head>
@@ -19,17 +21,16 @@
   </header>
   <!--UC 2-->
   <div class="form-content">
-      <form class="form" action="#" onsubmit="save();return false">
+      <form class="form" action="#" onsubmit="save()">
     <div class ="form-head">
         Employee Payroll form
     </div>
     <div class = "row-content">
         <label class="label text" for="name">Name</label>
     <input class="input" type="text" id="name" name="name"
-            placeholder="Your name.."required> 
+            placeholder="Your name.."required>
+    <error-output class="text-error" for="text"></error-output> 
     </div>
-
-  
   <!--UC 3-->
   <div class="row-content">
     <label class="label text" for="name">Profile Image</label>
@@ -141,6 +142,7 @@
           <option value="2017">2017</option>
           <option value="2016">2016</option>
       </select>
+      <error-output class="date-error" for="startDate"></error-output> 
   </div>
 </div>
 <!--UC 6-->
