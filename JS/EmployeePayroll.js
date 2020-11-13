@@ -73,8 +73,8 @@ class EmployeePayRollData {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefinedDate" :
             this.startDate.toLocaleDateString("en-US", options);
-        return "id =" + this.id + ",name = " + this.name + ",salary = " + this.salary +
-            " ,gender = " + this.gender + " ,profilePic = " + this.profilePic +
+        return "id =" + this.id + ",name = " + this.name + 
+            " ,gender = " + this.gender + " ,profilePic = " + this.profilePic +",salary = " + this.salary +
             " ,department = " + this.department +" ,startDate = " + empDate+" ,notes = " + this.note;
     }
 }
