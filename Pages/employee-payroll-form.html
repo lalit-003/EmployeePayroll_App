@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +7,20 @@
      <link rel="stylesheet" type="text/css" href="../CSS/employee-payroll.css">
      <script defer src="../JS/Employee_Form.js"></script>
     <script defer src="../JS/EmployeePayroll.js"></script>
-    <title>Employee Payroll Form</title>
+    <title>Employee payroll form</title>
 </head>
 <body>
   <!--UC 1-->
   <header class="header-content header">
     <div class="logo-content">
         <img src="../Assets/logo.png" alt="">
-        <div>
        <span class = "emp-text">EMPLOYEE</span><br>
        <span class ="emp-text emp-payroll">PAYROLL</span>
-       </div>
     </div>
   </header>
   <!--UC 2-->
   <div class="form-content">
-      <form class="form" action="#" onreset="resetForm()" onsubmit="save();return false">
+      <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
     <div class ="form-head">
         Employee Payroll form
     </div>
@@ -66,7 +63,7 @@
     </div>
 </div>
 <div class="row-content">
-    <label class="label text" name="department" for="department">Department</label>
+    <label class="label text" for="department">Department</label>
     <div>
         <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
         <label class="text" for="hr">HR</label>
@@ -80,18 +77,18 @@
         <label class="text" for="others">Others</label>
     </div>
 </div>
-
+<div>
 <div class="row-content">
     <label class="label text" for="salary">Choose your salary:</label>
-    <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
-    <output class="salary-output text" for="salary">400000</output>
+    <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="1000" >
+    <output class="salary-output" for="salary"></output>
 </div>
-
+</div>
 <!--UC 5-->
 <div class="row-content">
   <label class="label text" for="startDate">Start Date:</label>
-  <div id="startDate" name="startDate">
-      <select id="day" name="Day">
+  <div>
+      <select id="day" name="day">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -124,7 +121,7 @@
           <option value="30">30</option>
           <option value="31">31</option>
       </select>
-      <select id="month" name="Month">
+      <select id="month" name="month">
           <option value="Jan">January</option>
           <option value="Feb">Febuary</option>
           <option value="March">March</option>
@@ -138,21 +135,20 @@
           <option value="Nov">November</option>
           <option value="Dec">December</option>
       </select>
-      <select id="year" name="Year">
+      <select id="year" name="year">
           <option value="2020">2020</option>
           <option value="2019">2019</option>
           <option value="2018">2018</option>
           <option value="2017">2017</option>
           <option value="2016">2016</option>
       </select>
-  </div>
       <error-output class="date-error" for="startDate"></error-output> 
   </div>
-
+</div>
 <!--UC 6-->
 <div class="row content">
-  <label class="label text" for="note">Notes</label>
-  <textarea id="note" class="input" name="note" id="note" placeholder="" style="height: 100px;"></textarea>
+  <label class="label text" for="notes">Notes</label>
+  <textarea id="notes" class="input" name="note" placeholder="" style="height: 100px;"></textarea>
 </div>
 <div class="buttonParent">
   <button href="./home.html" class="resetButton button cancelButton">Cancel</button>
