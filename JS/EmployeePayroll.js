@@ -1,5 +1,5 @@
-//UC 2
-class EmployeePayRollData {
+//UC 1
+class EmployeePayroll {
     
     //getter and setter methods :
     get id() {
@@ -63,9 +63,7 @@ class EmployeePayRollData {
         return this._startDate;
     }
     set startDate(startDate) {
-        if (startDate <= new Date())
             this._startDate = startDate;
-        else throw "Invalid Date , Can't enter a future date";
     }
 
     //method 
@@ -75,7 +73,7 @@ class EmployeePayRollData {
             this.startDate.toLocaleDateString("en-US", options);
         return "id =" + this.id + ",name = " + this.name + 
             " ,gender = " + this.gender + " ,profilePic = " + this.profilePic +",salary = " + this.salary +
-            " ,department = " + this.department +" ,startDate = " + empDate+" ,notes = " + this.note;
+            " ,department = " + this.department +" ,startDate = " + this.startDate+" ,notes = " + this.note;
     }
 }
 

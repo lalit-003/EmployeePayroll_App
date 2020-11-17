@@ -8,7 +8,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 return;
             }
             try {
-                (new EmployeePayRollData()).name = name.value;
+                (new EmployeePayroll()).name = name.value;
                 textError.textContent = "";
             } catch (e) {
                 textError.textContent = e;
@@ -28,14 +28,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 const save = () => {
     try{
         let employeePayRollData = createEmployeePayRoll();
+        console.log(1);
         createAndUpdateStorage(employeePayRollData);
+        console.log(2);
     }catch(e){
         return;
     }
-}
+};
 
 //UC 4
-const createAndUpdateStorage = (employeePayrollData)=>{
+function createAndUpdateStorage (employeePayrollData){
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if(employeePayrollList!=undefined){
         employeePayrollList.push(employeePayrollData);
@@ -47,42 +49,42 @@ const createAndUpdateStorage = (employeePayrollData)=>{
 }
 
 const createEmployeePayRoll = ()=>{
-    let employeePayRollData = new EmployeePayRollData();
+    let employeePayRollData = new EmployeePayroll();
     try{
-        employeePayRollData.name=getInputValueById('#name')
+        employeePayRollData.name=getInputValueById('#name');
     }catch(e){
         setTextValue('.text-error', e)
         throw e;
     }
     employeePayRollData.profilePic=getSelectedValues('[name=profile]').pop();
     employeePayRollData.gender=getSelectedValues('[name=gender]').pop();
-    employeePayRollData.department=getSelectedValues('[name=department]').pop();
-    employeePayRollData.salary=getSelectedValues('#salary').pop();
-    employeePayRollData.note=getSelectedValues('#note').pop();
+    employeePayRollData.department=getSelectedValues('[name=department]');
+    employeePayRollData.salary=getInputValueById('#salary');
+    employeePayRollData.note=getInputValueById('#note');
     let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
     employeePayRollData.date = Date.parse(date);
     alert(employeePayRollData.toString());
     return employeePayRollData;
-}
+};
 
 const getSelectedValues=(propertyValue)=>{
-    let allItems = document.querySelectorAll(propertyValue)
+    let allItems = document.querySelectorAll(propertyValue);
     let selItems = [] ;
     allItems.forEach(item=>{
         if(item.checked)
         selItems.push(item.value);
-    })
+    });
     return selItems;
-}
+};
 
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
-}
+};
 const getInputElementValue = (id) => {
     let value = document.getElementById(id).value
     return value
-} 
+};
 
 //UC5
 const resetForm = ()=>{
