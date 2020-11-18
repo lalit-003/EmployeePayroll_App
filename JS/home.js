@@ -1,12 +1,21 @@
+let empPayrollList ;
 window.addEventListener("DOMContentLoaded", (event) => {
+    empPayrollList = createEmployeePayrollJSON();
+    document.querySelector(".emp-count").textContent = empPayrollList.length;
     createInnerHtml();
+    localStorage.removeItem('editEmp');
 });
+
+const getEmployeePayrollDataFromLocalStorage = () => {
+    return localStorage.getItem("EmployeePayrollList") ?
+        JSON.parse(localStorage.getItem("EmployeePayrollList")) : [];
+};
 
 //Template literal ES6 feature
 const createInnerHtml = () => {
     const headerHtml =
         "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th></tr>";
-        let empPayrollList = createEmployeePayrollJSON();
+        if(empPayrollList.length == 0) return;
         let innerHtml = `${headerHtml}`;
         for(const empPayrollData of empPayrollList){
              innerHtml = `${innerHtml}
@@ -65,7 +74,7 @@ const createInnerHtml = () => {
                  _note:'',
                  _salary:'600000',
                  _id: new Date().getTime()+2,
-                 _profilePic:'../Assets/Ellipse -3.png'
+                 _profilePic:'../Assets/Ellipse -9.png'
              }
          ]
          return empPayrollListLocal;

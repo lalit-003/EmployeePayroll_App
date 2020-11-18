@@ -28,9 +28,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 const save = () => {
     try{
         let employeePayRollData = createEmployeePayRoll();
-        console.log(1);
         createAndUpdateStorage(employeePayRollData);
-        console.log(2);
     }catch(e){
         return;
     }
@@ -48,7 +46,7 @@ function createAndUpdateStorage (employeePayrollData){
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 
-const createEmployeePayRoll = ()=>{
+const createEmployeePayRoll = () => {
     let employeePayRollData = new EmployeePayroll();
     try{
         employeePayRollData.name=getInputValueById('#name');
