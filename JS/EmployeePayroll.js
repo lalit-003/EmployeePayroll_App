@@ -64,6 +64,7 @@ class EmployeePayroll {
     }
     set startDate(startDate) {
             this._startDate = startDate;
+            console.log(startDate);
     }
 
     //method 
@@ -73,7 +74,7 @@ class EmployeePayroll {
             this.startDate.toLocaleDateString("en-US", options);
         return "id =" + this.id + ",name = " + this.name + 
             " ,gender = " + this.gender + " ,profilePic = " + this.profilePic +",salary = " + this.salary +
-            " ,department = " + this.department +" ,startDate = " + this.startDate+" ,notes = " + this.note;
+            " ,department = " + this.department +" ,startDate = " + empDate+" ,notes = " + this.note;
     }
 }
 
